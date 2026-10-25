@@ -18,13 +18,18 @@
 
 ## 📌 Overview
 
-Auth-flow audit, rate-limit / WAF detection, ║
+OPassForce is a defensive authentication-flow audit suite for web applications. It analyses login flows for CSRF, session and redirect handling, inspects cookies, and detects rate-limiting and WAF hints from response heuristics. It performs no brute-force attacks and defaults to a safe dry-run mode.
 
 ---
 
 ## ✨ Features
 
-- Defensive login auth-audit suite: CSRF, cookie, rate-limit and WAF detection with dry-run safety
+- Audits authentication flows for CSRF, session and redirect weaknesses
+- Detects rate-limiting and WAF behaviour from response heuristics
+- Inspects cookies and HTTP response characteristics
+- Operates in a dry-run mode by default, with no live POST until explicitly enabled
+- Optional confirmation gate before testing remote targets
+- Explicitly avoids brute-force techniques
 
 ---
 
@@ -39,6 +44,9 @@ Auth-flow audit, rate-limit / WAF detection, ║
 
 ```bash
 ./OPassForce
+./OPassForce --no-dry-run
+./OPassForce --allow-remote
+./OPassForce --help
 ```
 
 ---
